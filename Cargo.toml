@@ -1,0 +1,27 @@
+[package]
+name = "rust-benches"
+version = "0.1.0"
+authors = ["MOZGIII <mike-n@narod.ru>"]
+edition = "2018"
+autobenches = false
+
+[dependencies]
+async-std = "1"
+futures = "0.3"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "sync"] }
+smol = "1"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "block_on"
+harness = false
+
+[[bench]]
+name = "channels_cascade"
+harness = false
+
+[[bench]]
+name = "data_size"
+harness = false
